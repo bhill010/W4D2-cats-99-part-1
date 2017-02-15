@@ -1,0 +1,20 @@
+<h1> Request to rent a cat </h1>
+<form>
+  <br>
+  <label for= "cat" > Cat</label>
+  <select id= "cat" name = "@cats[name]">
+    <option disabled selected> -Pick Cat-</option>
+    <%Cat.all.each do |cat| %>
+      <option value= "<%=cat.name%>"> <%=cat.name%> </option>
+    <%end%>
+  </select><br>
+  <br>
+  <label for= "start_date" >Start Date</label>
+  <input type ="Date" value="start_date"/>
+  <br>
+  <br>
+  <label for= "end_date" >End Date</label>
+  <input type ="Date" value="end_date"/>
+  <br>
+
+</form>

@@ -1,0 +1,32 @@
+<h1> Edit cat </h1>
+<form action = "<%=cat_url(@cat)%>" method = "post">
+  <input type = "hidden" name = "_method" value = "PATCH">
+
+
+  <br>
+  <label for= "name" >Name</label>
+  <input type= "text" value="<%=@cat.name%>"/><br>
+
+  <label for= "sex" >Sex</label>
+  <input type= "radio" name="Sex" option value="sex" <%=@cat.sex == "M" ? "checked" : ""%>>M</option>
+  <input type= "radio" name="Sex" option value="sex" <%=@cat.sex == "F" ? "checked" : ""%>>F</option>
+
+  <br>
+
+  <label for= "color" > Color</label>
+  <select id= "color" name = "cat[color]">
+    <option disabled selected> --Pick Color--</option>
+    <option value = "Brown" <%=@cat.color=="Brown" ? "selected" : ""%>> --Brown--</option>
+    <option value = "Black" <%=@cat.color=="Black" ? "selected" : ""%>> --Black--</option>
+  </select>
+  <br>
+
+  <label for= "Date" > Date</label>
+  <input type ="text" value="<%=@cat.birthdate%>"/>
+  <br>
+
+  <label for= "Description" >Description</label>
+  <textarea description =>
+    <%=@cat.description%>
+  </textarea>
+</form>
